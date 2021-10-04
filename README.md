@@ -1,4 +1,4 @@
-# zsktv-inwentaryzacja
+# zinw
 
 ## Project setup
 ```
