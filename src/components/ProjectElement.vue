@@ -3,7 +3,7 @@
     <div class="text-wrapper">
       <h1>{{ title }}</h1>
       <p>{{ description }}</p>
-      <Joined :users="users"/>
+      <Joined :users="users" />
     </div>
     <div class="right-wrapper">
       <Button label="Join" :handleClick="click" />
@@ -22,7 +22,12 @@ export default {
     title: String,
     description: String,
   },
-    data: function () {
+  methods: {
+    click: function () {
+      console.log("click");
+    },
+  },
+  data: function () {
     return {
       users: [
         {
@@ -45,12 +50,17 @@ export default {
 <style scoped lang="scss">
 section {
   display: flex;
+  margin: 20px 0;
 }
 
 .text-wrapper {
   display: flex;
   flex-direction: column;
   text-align: left;
+
+  h1 {
+    line-height: 0;
+  }
 }
 
 .right-wrapper {

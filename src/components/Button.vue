@@ -18,10 +18,14 @@ export default {
 <style scoped lang="scss">
 @import "@/styles/_colors.scss";
 button {
-  padding: 8px 25px;
+  padding: 10px 30px;
   background: $primary;
   color: $white;
   border: none;
   border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 </style>
