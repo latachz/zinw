@@ -1,5 +1,5 @@
 <template>
-  <button @click="handleClick" v-bind="$attrs">
+  <button v-bind="$attrs">
     {{ label }}
   </button>
 </template>
@@ -8,8 +8,7 @@
 export default {
   name: "Button",
   props: {
-    label: { type: String, default: "Click" },
-    handleClick: Function,
+    label: { type: String, default: "Click" }
   },
 };
 </script>

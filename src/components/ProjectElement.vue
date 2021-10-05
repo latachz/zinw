@@ -3,10 +3,10 @@
     <div class="text-wrapper">
       <h1>{{ title }}</h1>
       <p>{{ description }}</p>
-      <Joined :users="users" />
     </div>
-    <div class="right-wrapper">
-      <Button label="Join" :handleClick="click" />
+    <div class="bottom-wrapper">
+      <Joined :users="users" />
+      <Button label="Join" @click="click" />
     </div>
   </section>
 </template>
@@ -50,7 +50,8 @@ export default {
 <style scoped lang="scss">
 section {
   display: flex;
-  margin: 20px 0;
+  flex-direction: column;
+  margin: 20px 20px;
 }
 
 .text-wrapper {
@@ -61,12 +62,16 @@ section {
   h1 {
     line-height: 0;
   }
+
+  & * {
+    margin: 10px 0;
+  }
 }
 
-.right-wrapper {
-  width: 80%;
+.bottom-wrapper {
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-between;
+  margin: 10px 0;
 }
 </style>
