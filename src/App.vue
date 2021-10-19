@@ -1,12 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" v-if="!hideNav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    hideNav: function () {
+      return ["Login", "Signup"].includes(this.$route.name);
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 @import "@/styles/_mixins.scss";

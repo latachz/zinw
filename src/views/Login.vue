@@ -13,8 +13,11 @@
         v-show="this.$store.state.error"
         v-html="this.$store.state.error"
       />
-      <Button type="submit" />
+      <Button type="submit" label="Login" />
     </form>
+    <div class="right-wrapper">
+      <img src="@/assets/logo.png" alt="zsktv socials" />
+    </div>
   </main>
 </template>
 
@@ -68,28 +71,23 @@ export default {
 
 main {
   width: 100%;
-  height: calc(100vh - 82px);
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  @include lg {
-    max-width: $screen-xl-min;
-  }
 }
 
 form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 0 auto;
+  padding: 40px;
 
   @include lg {
-    width: 400px;
+    width: 30%;
   }
 
   & input {
-    border: 1px solid gray;
+    border: 1px solid $primary;
     border-radius: 8px;
     padding: 10px 20px;
   }
@@ -103,6 +101,23 @@ form {
     color: $white;
     padding: 10px 10px;
     border-radius: 8px;
+  }
+}
+
+.right-wrapper {
+  height: 100%;
+  display: none;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background: $primary;
+
+  @include lg {
+    display: flex;
+  }
+
+  & img {
+    width: 300px;
   }
 }
 </style>
